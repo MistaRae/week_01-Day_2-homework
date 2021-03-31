@@ -32,19 +32,34 @@ for number in numbers:
 # 2. Print the difference between the largest and smallest value:
 numbers.sort()
 difference = numbers[-1] - numbers[0]
-print(numbers)
 print(difference)
 
 # 3. Print True if the list contains a 2 next to a 2 somewhere.
-for number in numbers:
-    if number == 2 and number is 2: 
+
+# ///////// not my work ////////////
+# --------------------------------------
+for index, item in enumerate(numbers):
+    next_index = index + 1 
+    if next_index < len(numbers) and item == 2 and numbers[next_index] == 2:
         print(True)
+# --------------------------------------
+# ///////// not my work ////////////
 
 # 4. Print the sum of the numbers, 
 #    BUT ignore any section of numbers starting with a 6 and extending to the next 7.
+
+# ///////// not my work ////////////
+# --------------------------------------
 sum_numbers = 0
+ignore = False
 for new_number in numbers:
-    if new_number !=6:
+    if new_number == 6:
+        ignore = True
+    if not ignore:
         sum_numbers += new_number
+    if new_number == 7:
+        ignore = False
 
 print(sum_numbers)
+# --------------------------------------
+# ///////// not my work ////////////
